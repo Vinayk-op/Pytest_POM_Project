@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // This works only when job is configured as "Pipeline script from SCM"
+                // Works only when job is configured as "Pipeline script from SCM"
                 checkout scm
             }
         }
@@ -14,12 +14,6 @@ pipeline {
                 bat 'python -m venv venv'
                 bat 'venv\\Scripts\\activate && pip install --upgrade pip'
                 bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
-            }
-        }
-
-        stage('Install Chrome') {
-            steps {
-                bat 'choco install googlechrome -y'
             }
         }
 
