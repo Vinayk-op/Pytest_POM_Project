@@ -10,12 +10,12 @@ pipeline {
         }
 
         stage('Setup Python') {
-            steps {
-                bat 'python -m venv venv'
-                bat 'venv\\Scripts\\activate && pip install --upgrade pip'
-                bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
-            }
-        }
+    steps {
+        bat 'python -m venv venv'
+        bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
+        bat 'venv\\Scripts\\python.exe -m pip install -r requirements.txt'
+    }
+}
 
         stage('Run Tests') {
             steps {
