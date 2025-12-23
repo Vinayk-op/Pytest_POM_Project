@@ -24,6 +24,10 @@ class BasePage:
         element = self.get_element(locator_name,locator_value)
         return element.text
 
+    def get_text(self, locator_name,locator_value):
+        element = self.get_element(locator_name,locator_value)
+        return element.text
+
     def get_element(self,locator_name,locator_value):
         element = None
         if locator_name.endswith("_id"):
