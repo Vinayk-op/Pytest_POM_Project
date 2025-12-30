@@ -11,7 +11,7 @@ class AccountSuccessPage(BasePage):
     account_creation_message_xpath = "//div[@id='content']/h1"
 
     def retrieve_account_creation_message(self):
-        return self.retrieve_element_text("account_creation_message_xpath",self.account_creation_message_xpath)
+        return self.get_text("account_creation_message_xpath",self.account_creation_message_xpath)
 
 
 

@@ -15,6 +15,6 @@ class SearchPage(BasePage):
         return self.check_display_status_of_element("valid_hp_product_link_text",self.valid_hp_product_link_text)
 
     def retrieve_no_product_message(self):
-        return self.retrieve_element_text("no_product_message_xpath",self.no_product_message_xpath)
+        return self.get_text("no_product_message_xpath",self.no_product_message_xpath)
 
 

@@ -9,28 +9,27 @@ class LoginPage(BasePage):
     def __init__(self,driver):
         super().__init__(driver)
 
-    email_address_field_id = "input-email"
-    password_field_id = "input-password"
-    login_button_xpath = "//input[@value='Login']"
-    warning_message_xpath = "//div[@id='account-login']/div[1]"
+    email_field = (By.ID, "input-email")
+    password_field = (By.ID, "input-password")
+    login_button = (By.XPATH, "//input[@value='Login']")
+    warning_message = (By.XPATH, "//div[@id='account-login']/div[1]")
 
-    def enter_email_address(self,email_address_text):
-        self.type_into_element(email_address_text,"email_address_field_id",self.email_address_field_id)
+    def enter_email(self, email):
+        self.send_keys(self.email_field, email)
 
-    def enter_password(self,password_text):
-        self.type_into_element(password_text,"password_field_id",self.password_field_id)
+    def enter_password(self, password):
+        self.send_keys(self.password_field, password)
 
-    def click_on_login_button(self):
-        self.element_click("login_button_xpath",self.login_button_xpath)
-        return AccountPage(self.driver)
+    def click_login(self):
+        self.click_element(self.login_button)
 
     def login_to_application(self,email_address_text,password_text):
-        self.enter_email_address(email_address_text)
+        self.enter_email(email_address_text)
         self.enter_password(password_text)
-        return self.click_on_login_button()
+        return self.click_login()
 
     def retrieve_warning_message(self):
-        return self.retrieve_element_text("warning_message_xpath",self.warning_message_xpath)
+        return self.get_text(self.warning_message)
 
 
 

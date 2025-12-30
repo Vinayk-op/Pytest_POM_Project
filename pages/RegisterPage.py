@@ -68,25 +68,25 @@ class RegisterPage(BasePage):
         return self.click_on_continue_button()
 
     def retrieve_duplicate_email_warning(self):
-        return self.retrieve_element_text("duplicate_email_warning_xpath",self.duplicate_email_warning_xpath)
+        return self.get_text("duplicate_email_warning_xpath",self.duplicate_email_warning_xpath)
 
     def retrieve_privacy_policy_warning(self):
-        return self.retrieve_element_text("privacy_policy_warning_xpath",self.privacy_policy_warning_xpath)
+        return self.get_text("privacy_policy_warning_xpath",self.privacy_policy_warning_xpath)
 
     def retrieve_first_name_warning(self):
-        return self.retrieve_element_text("first_name_warning_xpath",self.first_name_warning_xpath)
+        return self.get_text("first_name_warning_xpath",self.first_name_warning_xpath)
 
     def retrieve_last_name_warning(self):
-        return self.retrieve_element_text("last_name_warning_xpath",self.last_name_warning_xpath)
+        return self.get_text("last_name_warning_xpath",self.last_name_warning_xpath)
 
     def retrieve_email_warning(self):
-        return self.retrieve_element_text("email_warning_xpath",self.email_warning_xpath)
+        return self.get_text("email_warning_xpath",self.email_warning_xpath)
 
     def retrieve_telephone_warning(self):
-        return self.retrieve_element_text("telephone_warning_xpath",self.telephone_warning_xpath)
+        return self.get_text("telephone_warning_xpath",self.telephone_warning_xpath)
 
     def retrieve_password_warning(self):
-        return self.retrieve_element_text("password_warning_xpath",self.password_warning_xpath)
+        return self.get_text("password_warning_xpath",self.password_warning_xpath)
 
     def verify_all_warnings(self,expected_privacy_policy_warning,expected_first_name_warning_message,expected_last_name_warning_message,expected_email_warning_message,expected_telephone_warning_message,expected_password_warning_message):
         actual_privacy_policy_warning = self.retrieve_privacy_policy_warning()
