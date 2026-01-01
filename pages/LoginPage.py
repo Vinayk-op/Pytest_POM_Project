@@ -9,9 +9,9 @@ class LoginPage(BasePage):
     def __init__(self,driver):
         super().__init__(driver)
 
-    email_field = (By.ID, "input-email")
-    password_field = (By.ID, "input-password")
-    login_button = (By.XPATH, "//input[@value='Login']")
+    email_field = (By.ID, "Email")
+    password_field = (By.ID, "Password")
+    login_button = (By.XPATH, "//*[@class='button-1 login-button']")
     warning_message = (By.XPATH, "//div[@id='account-login']/div[1]")
 
     def enter_email(self, email):

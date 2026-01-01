@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPage
 from pages.RegisterPage import RegisterPage
-from pages.SearchPage import SearchPage
 
 
 class HomePage(BasePage):
@@ -20,9 +19,6 @@ class HomePage(BasePage):
     def enter_product_into_search_box_field(self,product_name):
         self.type_into_element(product_name,"search_box_field_name",self.search_box_field_name)
 
-    def click_on_search_button(self):
-        self.element_click("search_button_xpath",self.search_button_xpath)
-        return SearchPage(self.driver)
 
     def click_on_my_account_drop_menu(self):
         self.element_click("my_account_drop_menu_xpath",self.my_account_drop_menu_xpath)

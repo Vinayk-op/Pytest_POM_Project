@@ -15,8 +15,8 @@ class TestRegister(BaseTest):
         home_page = HomePage(self.driver)
         register_page = home_page.navigate_to_register_page()
         account_success_page = register_page.register_an_account(
-            ExcelUtils.get_cell_data("ExcelFiles/TutorialsNinja.xlsx","RegisterTest",2,1),
-            ExcelUtils.get_cell_data("ExcelFiles/TutorialsNinja.xlsx","RegisterTest",2,2),
+            ExcelUtils.get_cell_data("ExcelFiles/TestData.xlsx","RegisterTest",2,1),
+            ExcelUtils.get_cell_data("ExcelFiles/TestData.xlsx","RegisterTest",2,2),
             self.generate_email_with_time_stamp(),
             "1234567890",
             "12345","12345","no","select")
