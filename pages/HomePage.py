@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPage
-from pages.RegisterPage import RegisterPage
 
 
 class HomePage(BasePage):
@@ -30,10 +29,6 @@ class HomePage(BasePage):
     def navigate_to_login_page(self):
         self.click_on_my_account_drop_menu()
         return self.select_login_option()
-
-    def select_register_option(self):
-        self.element_click("register_option_link_text",self.register_option_link_text)
-        return RegisterPage(self.driver)
 
     def navigate_to_register_page(self):
         self.click_on_my_account_drop_menu()

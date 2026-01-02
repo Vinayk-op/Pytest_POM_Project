@@ -2,7 +2,6 @@ from datetime import datetime
 import pytest
 from selenium.webdriver.common.by import By
 
-from pages.AccountPage import AccountPage
 from pages.HomePage import HomePage
 from pages.LoginPage import LoginPage
 from tests.BaseTest import BaseTest
