@@ -12,7 +12,7 @@ class LoginPage(BasePage):
     email_field = (By.ID, "Email")
     password_field = (By.ID, "Password")
     login_button = (By.XPATH, "//*[@class='button-1 login-button']")
-    warning_message = (By.XPATH, "//div[@id='account-login']/div[1]")
+    warning_message = (By.XPATH, "//*[@id='admin-notifications']//span")
 
     def enter_email(self, email):
         self.send_keys(self.email_field, email)
